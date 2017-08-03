@@ -18,7 +18,7 @@ ENV JENKINS_SLAVE_AGENT_PORT ${agent_port}
 
 # Change time 2017-08-04:17:30
 #RUN groupadd -g ${gid} ${group} \
-    && useradd -d "$JENKINS_HOME" -u ${uid} -g ${gid} -m -s /bin/bash ${user}
+#    && useradd -d "$JENKINS_HOME" -u ${uid} -g ${gid} -m -s /bin/bash ${user}
 
 # Jenkins home directory is a volume, so configuration and build history 
 # can be persisted and survive image upgrades
