@@ -15,7 +15,9 @@ ENV JENKINS_SLAVE_AGENT_PORT ${agent_port}
 # Jenkins is run with user `jenkins`, uid = 1000
 # If you bind mount a volume from the host or a data container, 
 # ensure you use the same uid
-RUN groupadd -g ${gid} ${group} \
+
+# Change time 2017-08-04:17:30
+#RUN groupadd -g ${gid} ${group} \
     && useradd -d "$JENKINS_HOME" -u ${uid} -g ${gid} -m -s /bin/bash ${user}
 
 # Jenkins home directory is a volume, so configuration and build history 
@@ -63,7 +65,8 @@ EXPOSE ${agent_port}
 
 ENV COPY_REFERENCE_FILE_LOG $JENKINS_HOME/copy_reference_file.log
 
-USER ${user}
+# Change time 2017-08-04:17:30
+USER root
 
 COPY ./jenkins-cbs/jenkins-support /usr/local/bin/jenkins-support
 COPY ./jenkins-cbs/jenkins.sh /usr/local/bin/jenkins.sh
